@@ -8,10 +8,23 @@ import (
 	"github.com/kzhendarov/GoExample/internal/constants"
 )
 
+/* Область видимости всего пакета */
+// Объявление переменных
+var myVar int
+
+// Объявление с инициализацией
+var maVar2 float32 = 2.581
+
+// Объявление переменной по типу присваемого значения:
+var myVar3 = true
+
 func main() {
 
-	v := math.Pi
+	// Объявление с определением типа по присваемому занчению:
+	p := math.Pi // объявит переменную p float со значением константы 3.1415
 
+	// Форматированный вывод (описание шаблона формата в README.md)
+	fmt.Printf("myVar = %d\nmyVar2 = %.3f\nmyVar3 = %t\nCONST Pi = %.9f\n\n", myVar, maVar2, myVar3, p)
 	// Пример использования перечисления (поля данных и методы типа Direction описаны в ".\internal\constants\directions.go")
 	var moving constants.Direction = constants.North
 
@@ -23,7 +36,7 @@ func main() {
 	var profile class.Person = *class.NewPerson("Joe", "Black", 32, "j.black@e-mail.com", "+0(8956)999-00-01")
 
 	// Вывод информации с данными экземпляра типа Person
-	fmt.Println(profile, v)
+	fmt.Println(profile)
 
 	/*
 		Все поля структуры Person приватные, получить значения запросом > profile.firstName возможности нет.
